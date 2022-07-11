@@ -19,6 +19,7 @@ public class GameMain {
         Player player = new Player(normalPlayerName);                   //일반 선수 등록
         FraudPlayer fraudPlayer = new FraudPlayer(fraudPlayerName);     //사기 선수 등록
 
-        Judge judge = new Judge();                                  //심판을 통해 선수등록을 할 수 있습니다.
+        Judge judge = new Judge(normalPlayerName, fraudPlayerName);                      //심판을 통해 선수등록을 할 수 있습니다.
+        judge.start();
     }
 }
