@@ -16,7 +16,6 @@ public class Judge {
     Recorder recorder = new Recorder();
     NormalDice normaldice = new NormalDice();
     FraudDice fraudDice = new FraudDice();
-
     private int times = 5;          //주사위를 서로 몇번 던질것인지에 대해 지정할 수 있습니다 주사위는 5번 던지는것으로 하겠습니다.
 
     public Judge(Player normalPlayer, Player fraudPlayer) {
