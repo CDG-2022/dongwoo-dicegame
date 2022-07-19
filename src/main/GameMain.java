@@ -16,7 +16,10 @@ public class GameMain {
         System.out.println("사기 플레이어의 이름을 입력하시오: ");
         fraudPlayerName = scanner.nextLine();
 
-        Judge judge = new Judge(normalPlayerName, fraudPlayerName);                      //심판을 통해 선수등록을 할 수 있습니다.
+        NormalPlayer normalplayer = new NormalPlayer(normalPlayerName);                   // 심판을 통해 선수등록을 할 수 있습니다.
+        FraudPlayer fraudPlayer = new FraudPlayer(fraudPlayerName);
+
+        Judge judge = new Judge(normalplayer, fraudPlayer);                      //심판을 통해 선수등록을 할 수 있습니다.
         judge.start();
     }
 }
