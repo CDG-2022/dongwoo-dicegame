@@ -3,8 +3,7 @@ package judge;
 import dice.Mode;
 import dice.NormalDice;
 import dice.FraudDice;
-import player.FraudPlayer;
-import player.NormalPlayer;
+import player.Player;
 import recorder.Recorder;
 
 public class Judge {
@@ -14,15 +13,12 @@ public class Judge {
     private int normalNum = 0, fraudNum = 0;                  //주사위 숫자
     private boolean lose = false, overWhelm = false;          //사기 유저의 승리, 거만 여부
 
-    NormalPlayer normalplayer = new NormalPlayer(normalPlayerName);                   // 심판을 통해 선수등록을 할 수 있습니다.
-    FraudPlayer fraudPlayer = new FraudPlayer(fraudPlayerName);
     Recorder recorder = new Recorder();
     NormalDice normaldice = new NormalDice();
     FraudDice fraudDice = new FraudDice();
-
     private int times = 5;          //주사위를 서로 몇번 던질것인지에 대해 지정할 수 있습니다 주사위는 5번 던지는것으로 하겠습니다.
 
-    public Judge(String normalPlayerName, String fraudPlayerName) {
+    public Judge(Player normalPlayer, Player fraudPlayer) {
         this.normalPlayerName = normalPlayerName;
         this.fraudPlayerName = fraudPlayerName;
     }
