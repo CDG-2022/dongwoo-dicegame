@@ -2,7 +2,7 @@ package main;
 
 import judge.Judge;
 import player.FraudPlayer;
-import player.Player;
+import player.NormalPlayer;
 
 import java.util.Scanner;
 
@@ -15,9 +15,6 @@ public class GameMain {
         normalPlayerName = scanner.nextLine();                      //플레이어의 이름을 정할 수 있습니다.
         System.out.println("사기 플레이어의 이름을 입력하시오: ");
         fraudPlayerName = scanner.nextLine();
-
-        Player player = new Player(normalPlayerName);                   //일반 선수 등록
-        FraudPlayer fraudPlayer = new FraudPlayer(fraudPlayerName);     //사기 선수 등록
 
         Judge judge = new Judge(normalPlayerName, fraudPlayerName);                      //심판을 통해 선수등록을 할 수 있습니다.
         judge.start();

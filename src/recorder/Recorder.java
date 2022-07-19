@@ -1,12 +1,12 @@
 package recorder;
 
-import player.FraudPlayer;
-import player.Player;
+import dice.Mode;
+
 
 public class Recorder {
     private int normalPlayerScore;
     private int fraudPlayerScore;
-    private String mode;
+    private Mode mode;
     private String normalPlayerName, fraudPlayerName;
 
     public void setNormalPlayerName(String normalPlayerName) {
@@ -25,7 +25,7 @@ public class Recorder {
         this.fraudPlayerScore = fraudPlayerScore;
     }
 
-    public void setMode(String mode) {
+    public void setMode(Mode mode) {
         this.mode = mode;
     }
 

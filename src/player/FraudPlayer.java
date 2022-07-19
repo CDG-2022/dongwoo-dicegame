@@ -1,6 +1,8 @@
 package player;
 
-public class FraudPlayer {
+import dice.Mode;
+
+public class FraudPlayer implements Player{
 
     private String name;    //플레이어는 이름을 정할수 있고, 주사위를 들고있습니다. 또한 본인의 합계득점을 기억합니다.
     private int total;
@@ -11,22 +13,24 @@ public class FraudPlayer {
         this.total = 0;
     }
 
-    public void setTotal(int total) {       //또한 본인의 합계득점을 기억합니다.
+    @Override
+    public void calTotal(int total) {       //또한 본인의 합계득점을 기억합니다.
         this.total += total;
     }
 
+    @Override
     public int getTotal() {
         return total;
     }
 
-    public String mode(boolean lose, boolean overWhelm) {
+    public Mode mode(boolean lose, boolean overWhelm) {
         if(lose == true) {
-            level = "strong";
+            level = "STRONG";
         }else if(overWhelm == true){
-            level = "week";
+            level = "WEEK";
         }else{
-            level = "normal";
+            level = "NORMAL";
         }
-        return level;
+        return Mode.valueOf(level);
     }
 }

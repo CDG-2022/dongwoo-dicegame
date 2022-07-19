@@ -5,24 +5,26 @@ import player.FraudPlayer;
 import java.util.Random;
 
 public class FraudDice {        //주사위는 '사기주사위 '가 있습니다.
-    Random random = new Random();
+    private Random random = new Random();
     private int num = 0;
-    private String mode;
+    private Mode mode;
 
-    public void setMode(String mode) {
+    public void setMode(Mode mode) {
         this.mode = mode;
     }
 
-    public int ThrowFraudDice() {
-        switch(mode) {
-            case "strong":
-                num = random.nextInt(4) + 3;
-                break;
-            case "week":
-                num = random.nextInt(4) + 1;
-                break;
-            default:
-                num = random.nextInt(6) + 1;
+    public int ThrowDice() {
+
+        if(mode == Mode.STRONG){
+            num = random.nextInt(4) + 3;
+        }
+
+        else if(mode == Mode.WEEK){
+            num = random.nextInt(4) + 1;
+        }
+
+        else{
+            num = random.nextInt(6) + 1;
         }
         return num;
     }
